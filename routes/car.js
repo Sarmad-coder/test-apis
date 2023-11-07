@@ -40,7 +40,7 @@ router.post('/create', upload.fields([{ name: 'images', maxCount: 10 },]), async
     console.log( req.files.images)
     req.body.images=[];
     req.files.images.forEach((image)=>{
-        req.body.images.push("http://localhost:3002/images/"+image.originalname)
+        req.body.images.push("https://cryptic-earth-44941-8646f028cfed.herokuapp.com/images/"+image.originalname)
     })
     console.log(req.body.images)
    
