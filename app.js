@@ -12,7 +12,7 @@ var carRouter = require('./routes/car');
 var app = express();
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/testDb")
+  .connect("mongodb+srv://sarmadawan35:DtNplVTmaWuQdS9S@mycluster.cytjjkg.mongodb.net/testDb")
   .then(() => console.log('Mongodb connected'))
   .catch((error) => {
     console.log('Mongodb connection failed. exiting now...');
@@ -30,9 +30,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
-app.use('/', (req, res, next)=>{
-  res.json("Api is running")
-})
+// app.use('/', (req, res, next)=>{
+//   res.json("Api is running")
+// })
 app.use('/user', userRouter);
 app.use('/car', carRouter);
 carRouter
