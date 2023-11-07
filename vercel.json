@@ -7,7 +7,7 @@
     ],
     "routes": [
         {
-          "src": "/(.*)",
+          "src": "./bin(.*)",
           "dest": "app.js"
         }
     ]
